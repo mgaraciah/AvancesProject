@@ -4,7 +4,7 @@ from django.db import models
 
 class Tipo_Doc_Notarial(models.Model):
     idTipo_Doc_Notarial = models.AutoField(primary_key=True)
-    tipo_documento = models.CharField('Tipo de Documento', max_length=15, help_text='Ingresa el Tipo')
+    tipo_documento = models.CharField('Tipo de Documento', max_length=200, help_text='Ingresa el Tipo')
 
     def __str__(self):
         return "%s" %(self.tipo_documento)
