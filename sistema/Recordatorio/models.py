@@ -3,6 +3,11 @@ from Consulta.models import Consulta
 
 # Create your models here.
 
+select_genero = (
+
+    ('S','Si'),
+    ('N', 'No'),
+)
 
 class Recordatorio(models.Model):
     idRecordatorio = models.AutoField(primary_key=True)
@@ -10,8 +15,9 @@ class Recordatorio(models.Model):
     motivo = models.CharField('Motivo', max_length=200, help_text='Ingresa el Motivo')
     horaRecordatorio = models.DateTimeField('Hora Recordatorio', auto_now_add=True)
     fechaRecordatorio = models.DateTimeField('Fecha Recordatorio', auto_now_add=True)
-    finalizado = models.CharField('Finalizado', max_length=15, help_text='Ingrese si esta finzalizado el recordatorio')
-    idConsulta = models.ForeignKey(Consulta, on_delete=models.CASCADE, verbose_name = 'Id Consulta')
+    finalizado = models.CharField('Finalizado', max_length=1, choices=select_genero, default='M',
+      help_text='Seleccione si esta finalizado o no')
+    idConsulta = models.ForeignKey(Consulta, on_delete=models.CASCADE, verbose_name = 'Consulta')
 
     class Meta():
         db_table = 'recordatorio'
