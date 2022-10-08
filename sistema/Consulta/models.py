@@ -15,6 +15,12 @@ select_estado = (
     ('C', 'Cancelado'),
 )
 
+select_tipo_persona = (
+
+    ('S', 'Secretaria'),
+    ('A','Abogada'),
+)
+
 class Consulta(models.Model):
     idConsulta = models.AutoField(primary_key=True)
     motivo = models.CharField('Motivo', max_length=200, help_text='Ingresa el Motivo')
@@ -22,8 +28,8 @@ class Consulta(models.Model):
     idCliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='Cliente')
     estado = models.CharField('Estado', max_length=1, choices=select_estado,
                                   help_text='Seleccione el estado')
-    idColegiado = models.ForeignKey(Abogada, on_delete=models.CASCADE, verbose_name='ID Colegiado')
-    dpiSecre = models.ForeignKey(Secretaria, on_delete=models.CASCADE, verbose_name='DPI Secretaria')#agregar al principio los verbose
+    tipo_persona = models.CharField('Tipo de Persona', max_length=1, choices=select_tipo_persona,
+                                  help_text='Seleccione el tipo de Persona')
 
     def __str__(self):
         return "%s %s" %(self.idCliente, self.motivo)

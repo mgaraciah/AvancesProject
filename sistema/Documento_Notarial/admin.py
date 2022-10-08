@@ -10,6 +10,4 @@ class Documento_NotarialAdmin(admin.ModelAdmin):
     search_fields = ['idConsulta']
 
 
-    
-
 admin.site.register(Documento_Notarial, Documento_NotarialAdmin)
