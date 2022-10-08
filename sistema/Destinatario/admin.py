@@ -3,4 +3,3 @@ from Destinatario.models import Destinatario
 
 # Register your models here.
 
-admin.site.register(Destinatario)

@@ -4,7 +4,7 @@ from Consulta.models import Consulta
 # Register your models here.
 
 class ConsultaAdmin(admin.ModelAdmin):
-    list_display = ['motivo', 'fechaInicio', 'idCliente', 'estado']
+    list_display = ['motivo', 'fechaInicio', 'idCliente', 'estado', 'proceso_' ]
     list_filter = ['motivo', 'idCliente']
     search_fields = ['motivo']
 

@@ -21,5 +21,5 @@ class Recordatorio(models.Model):
 
     class Meta():
         db_table = 'recordatorio'
-        verbose_name = 'Recordatorio'
-        verbose_name_plural = 'Recordatorios'
+        verbose_name = 'Agenda'
+        verbose_name_plural = 'Agendas'
